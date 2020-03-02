@@ -16,9 +16,11 @@ const Homepage = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (searchIngredient.length > 3) {
+      setShowErrorMessage(false);
       fetchRecipes(searchIngredient).then(result => {
         if (result.length > 0) {
           setRecipes(result);
+          setShowEmptyMessage(false);
         } else {
           setRecipes([]);
           setShowEmptyMessage(true);
