@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { Card } from "./card";
-import { handleLactose, htmlDecode } from "../../components";
+import { htmlDecode, handleLactose } from "../../utils";
 
 afterEach(cleanup);
 
