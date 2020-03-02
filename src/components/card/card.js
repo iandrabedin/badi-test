@@ -2,7 +2,7 @@ import React from "react";
 import "./card.scss";
 
 export const Card = props => {
-  const { url, image, title, ingredients } = props;
+  const { url, image, title, ingredients, lactose } = props;
 
   return (
     <div className="col-sm-12 col-md-6">
@@ -11,6 +11,7 @@ export const Card = props => {
           <a href={url} target="_blank" rel="noopener noreferrer">
             <img src={image} alt={title} />
           </a>
+          {lactose && <div className="tag">Has Lactose</div>}
         </div>
         <div className="info">
           <h3 className="title">{title}</h3>

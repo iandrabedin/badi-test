@@ -24,6 +24,11 @@ exports[`CardsList should render as expect 1`] = `
               src="thumbnail.jpg"
             />
           </a>
+          <div
+            class="tag"
+          >
+            Has Lactose
+          </div>
         </div>
         <div
           class="info"

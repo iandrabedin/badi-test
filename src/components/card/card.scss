@@ -13,6 +13,21 @@
       cursor: pointer;
       height: 140px;
     }
+
+    .tag {
+      color: $color-white;
+      background-color: rgba($color-primary, 0.8);
+      text-align: center;
+      width: 280px;
+      height: 40px;
+      line-height: 40px;
+      top: 18px;
+      right: -13%;
+      position: relative;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
   }
 
   .info {
@@ -40,5 +55,12 @@
 @media (min-width: 768px) {
   .card {
     margin: 0 24px 24px 0;
+
+    .image {
+      .tag {
+        top: 40px;
+        right: -25%;
+      }
+    }
   }
 }
