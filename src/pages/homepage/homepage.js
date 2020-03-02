@@ -7,6 +7,7 @@ const Homepage = () => {
   const [recipes, setRecipes] = useState([]);
   const [searchIngredient, setSearchIngredient] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [showEmptyMessage, setShowEmptyMessage] = useState(false);
 
   const handleChangeIngredient = e => {
     setSearchIngredient(e.target.value);
@@ -15,7 +16,14 @@ const Homepage = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (searchIngredient.length > 3) {
-      fetchRecipes(searchIngredient).then(result => setRecipes(result));
+      fetchRecipes(searchIngredient).then(result => {
+        if (result.length > 0) {
+          setRecipes(result);
+        } else {
+          setRecipes([]);
+          setShowEmptyMessage(true);
+        }
+      });
     } else {
       setShowErrorMessage(true);
     }
@@ -35,7 +43,7 @@ const Homepage = () => {
         searchIngredient={searchIngredient}
         handleChangeIngredient={handleChangeIngredient}
       />
-      <CardsList recipes={recipes} />
+      <CardsList recipes={recipes} showEmptyMessage={showEmptyMessage} />
     </div>
   );
 };

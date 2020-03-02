@@ -11,7 +11,7 @@ export const handleLactose = ingredient => {
 };
 
 export const CardsList = props => {
-  const { recipes } = props;
+  const { recipes, showEmptyMessage } = props;
 
   return (
     <div className="row">
@@ -25,6 +25,9 @@ export const CardsList = props => {
           url={recipe.href}
         />
       ))}
+      {showEmptyMessage && (
+        <p>No recipes were found with these ingredients. Try again.</p>
+      )}
     </div>
   );
 };

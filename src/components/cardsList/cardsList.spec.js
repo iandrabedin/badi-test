@@ -12,13 +12,23 @@ const props = {
       ingredients: "potato, cheese",
       thumbnail: "thumbnail.jpg"
     }
-  ]
+  ],
+  showEmptyMessage: false
 };
 
 describe("CardsList", () => {
   it("should render as expect", () => {
     const { asFragment } = render(<CardsList {...props} />);
     expect(asFragment()).toMatchSnapshot();
+  });
+
+  it("should show empty message if there is no recipe", () => {
+    const emptyProps = { ...props, showEmptyMessage: true };
+    const { getByText } = render(<CardsList {...emptyProps} />);
+    const emptyMessage = getByText(
+      "No recipes were found with these ingredients. Try again."
+    );
+    expect(emptyMessage).toBeInTheDocument();
   });
 
   it("should show recipes", () => {
