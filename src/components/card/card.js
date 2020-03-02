@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import "./card.scss";
 
-export const Card = props => {
+export const Card = memo(props => {
   const { url, image, title, ingredients, lactose } = props;
 
   return (
@@ -20,4 +20,4 @@ export const Card = props => {
       </div>
     </div>
   );
-};
+});
