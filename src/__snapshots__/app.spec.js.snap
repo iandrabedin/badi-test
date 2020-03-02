@@ -12,44 +12,9 @@ exports[`App should render as expected 1`] = `
     </div>
   </div>
   <div
-    class="container"
+    class="loading"
   >
-    <h1>
-      Recipe Puppy is an ingredient based recipe search
-    </h1>
-    <form
-      class="form"
-    >
-      <div
-        class="form-input"
-      >
-        <label
-          for="ingredient"
-        >
-          Ingredients
-        </label>
-        <input
-          id="ingredient"
-          name="ingredient"
-          placeholder="Onions, garlic..."
-          type="text"
-          value=""
-        />
-        <div
-          class="error-message"
-        />
-      </div>
-      <button
-        class="button"
-        name="button-submit"
-        type="submit"
-      >
-        Search
-      </button>
-    </form>
-    <div
-      class="row"
-    />
+    Loading...
   </div>
   <footer
     class="footer"

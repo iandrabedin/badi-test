@@ -1,13 +1,16 @@
-import React from "react";
-import Homepage from "./pages";
-import { Navbar, Footer } from "./components";
+import React, { Suspense, lazy } from "react";
+import { Navbar, Footer, Loading } from "./components";
 import "./app.scss";
+
+const Homepage = lazy(() => import("./pages/homepage"));
 
 function App() {
   return (
     <>
       <Navbar />
-      <Homepage />
+      <Suspense fallback={<Loading />}>
+        <Homepage />
+      </Suspense>
       <Footer />
     </>
   );
