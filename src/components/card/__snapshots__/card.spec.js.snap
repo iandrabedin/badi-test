@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render as expected 1`] = `
+<DocumentFragment>
+  <div
+    class="col-sm-12 col-md-6"
+  >
+    <div
+      class="card"
+    >
+      <div
+        class="image"
+      >
+        <a
+          href="url"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <img
+            alt="title"
+            src="image"
+          />
+        </a>
+      </div>
+      <div
+        class="info"
+      >
+        <h3
+          class="title"
+        >
+          title
+        </h3>
+        <p
+          class="ingredients"
+        >
+          eggs
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

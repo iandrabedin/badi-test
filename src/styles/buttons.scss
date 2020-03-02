@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+.button {
+  color: $color-white;
+  text-transform: uppercase;
+  background-color: $color-secondary;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-small;
+  border-radius: 4px;
+  height: 36px;
+  padding: 0 3rem;
+  cursor: pointer;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: rgba($color-secondary, 0.9);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $color-grey-light;
+  }
+}
+
+// Mobile
+@media (max-width: 767px) {
+  .button {
+    width: 100%;
+    margin: 16px 0;
+  }
+}

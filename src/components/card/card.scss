@@ -1,0 +1,44 @@
+@import "../../styles/variables.scss";
+
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 12px 0;
+
+  .image {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      cursor: pointer;
+      height: 140px;
+    }
+  }
+
+  .info {
+    padding: 8px 16px;
+
+    .title {
+      color: $color-primary;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-x-large;
+      margin: 0;
+    }
+
+    .ingredients {
+      color: $color-grey-dark;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-small;
+      text-transform: capitalize;
+      margin: 0;
+      padding: 4px 0;
+    }
+  }
+}
+
+// Tablet - Desktop
+@media (min-width: 768px) {
+  .card {
+    margin: 0 24px 24px 0;
+  }
+}
