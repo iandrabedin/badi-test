@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { fetchRecipes } from "../../services";
-import { CardsList } from "../../components";
+import { Form, CardsList } from "../../components";
 
 const Homepage = () => {
   // States
   const [recipes, setRecipes] = useState([]);
+  const [searchIngredient, setSearchIngredient] = useState("");
+
+  const handleChangeIngredient = e => {
+    setSearchIngredient(e.target.value);
+  };
+
+  const onSubmit = e => {
+    e.preventDefault();
+    fetchRecipes(searchIngredient).then(result => setRecipes(result));
+  };
 
   // Effects
   useEffect(() => {
@@ -14,6 +24,11 @@ const Homepage = () => {
   return (
     <div className="container">
       <h1>Recipe Puppy is an ingredient based recipe search</h1>
+      <Form
+        onSubmit={onSubmit}
+        searchIngredient={searchIngredient}
+        handleChangeIngredient={handleChangeIngredient}
+      />
       <CardsList recipes={recipes} />
     </div>
   );
