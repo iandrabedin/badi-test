@@ -35,6 +35,9 @@ exports[`App should render as expected 1`] = `
           type="text"
           value=""
         />
+        <div
+          class="error-message"
+        />
       </div>
       <button
         class="button"

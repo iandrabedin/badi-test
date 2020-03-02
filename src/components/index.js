@@ -1,4 +1,4 @@
-export { CardsList, handleLactose } from "./cardsList";
+export { CardsList, handleLactose, htmlDecode } from "./cardsList";
 export { Card } from "./card";
 export { Form } from "./form";
 export { Footer } from "./footer";

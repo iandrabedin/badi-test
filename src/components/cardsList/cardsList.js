@@ -10,6 +10,12 @@ export const handleLactose = ingredient => {
   }
 };
 
+// Format HTML entities to characters
+export const htmlDecode = text => {
+  var doc = new DOMParser().parseFromString(text, "text/html");
+  return doc.documentElement.textContent;
+};
+
 export const CardsList = props => {
   const { recipes, showEmptyMessage } = props;
 
@@ -19,8 +25,8 @@ export const CardsList = props => {
         <Card
           key={index}
           image={recipe.thumbnail}
-          title={recipe.title}
-          ingredients={recipe.ingredients}
+          title={htmlDecode(recipe.title)}
+          ingredients={htmlDecode(recipe.ingredients)}
           lactose={handleLactose(recipe.ingredients)}
           url={recipe.href}
         />

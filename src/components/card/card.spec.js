@@ -1,7 +1,7 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
 import { Card } from "./card";
-import { handleLactose } from "../../components";
+import { handleLactose, htmlDecode } from "../../components";
 
 afterEach(cleanup);
 
@@ -33,6 +33,13 @@ describe("Card", () => {
     const lactoseProps = { ...props, lactose: handleLactose("milk") };
     const { queryByText } = render(<Card {...lactoseProps} />);
     expect(queryByText("Has Lactose")).toBeInTheDocument();
+  });
+
+  it("should decode html entitity to correct title", () => {
+    const entitityProps = { ...props, title: htmlDecode("Souffl&#233;") };
+    const { queryByText } = render(<Card {...entitityProps} />);
+    expect(queryByText("Souffl&#233;")).not.toBeInTheDocument();
+    expect(queryByText("Soufflé")).toBeInTheDocument();
   });
 
   it("should show title and ingredients", () => {
