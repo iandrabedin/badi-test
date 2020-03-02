@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render as expect 1`] = `
+<DocumentFragment>
+  <div
+    class="navbar"
+  >
+    <div
+      class="container"
+    >
+      Recipe Puppy
+    </div>
+  </div>
+</DocumentFragment>
+`;

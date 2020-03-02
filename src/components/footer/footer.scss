@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.footer {
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+
+  a {
+    padding: 0 4px;
+  }
+}

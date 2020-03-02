@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render as expect 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer"
+  >
+    <div
+      class="container"
+    >
+      Made with
+      <a
+        href="https://reactjs.org/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        ReactJS
+      </a>
+      and
+      <a
+        href="http://www.recipepuppy.com/about/api/"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Recipe Puppy API
+      </a>
+    </div>
+  </footer>
+</DocumentFragment>
+`;
