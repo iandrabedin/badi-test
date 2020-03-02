@@ -24,6 +24,11 @@
     border: 1px solid rgba(33, 37, 41, 0.15);
     width: -webkit-fill-available;
   }
+
+  .error-message {
+    font-size: $font-size-x-small;
+    color: $color-danger;
+  }
 }
 
 // Tablet - Desktop

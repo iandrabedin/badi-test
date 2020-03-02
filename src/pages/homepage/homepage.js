@@ -6,6 +6,7 @@ const Homepage = () => {
   // States
   const [recipes, setRecipes] = useState([]);
   const [searchIngredient, setSearchIngredient] = useState("");
+  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
   const handleChangeIngredient = e => {
     setSearchIngredient(e.target.value);
@@ -13,7 +14,11 @@ const Homepage = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    fetchRecipes(searchIngredient).then(result => setRecipes(result));
+    if (searchIngredient.length > 3) {
+      fetchRecipes(searchIngredient).then(result => setRecipes(result));
+    } else {
+      setShowErrorMessage(true);
+    }
   };
 
   // Effects
@@ -26,6 +31,7 @@ const Homepage = () => {
       <h1>Recipe Puppy is an ingredient based recipe search</h1>
       <Form
         onSubmit={onSubmit}
+        showErrorMessage={showErrorMessage}
         searchIngredient={searchIngredient}
         handleChangeIngredient={handleChangeIngredient}
       />
