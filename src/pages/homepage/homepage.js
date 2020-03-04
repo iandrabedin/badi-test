@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { fetchRecipes } from "../../services";
-import { Form, CardsList } from "../../components";
+import { Form, Loading } from "../../components";
+
+const CardsList = lazy(() => import("../../components/cardsList"));
 
 const Homepage = () => {
   // States
@@ -45,7 +47,9 @@ const Homepage = () => {
         searchIngredient={searchIngredient}
         handleChangeIngredient={handleChangeIngredient}
       />
-      <CardsList recipes={recipes} showEmptyMessage={showEmptyMessage} />
+      <Suspense fallback={<Loading />}>
+        <CardsList recipes={recipes} showEmptyMessage={showEmptyMessage} />
+      </Suspense>
     </div>
   );
 };

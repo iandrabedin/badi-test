@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "../../components";
 import { htmlDecode, handleLactose } from "../../utils";
 
-export const CardsList = props => {
+const CardsList = props => {
   const { recipes, showEmptyMessage } = props;
 
   return (
@@ -23,3 +23,5 @@ export const CardsList = props => {
     </div>
   );
 };
+
+export default CardsList;
