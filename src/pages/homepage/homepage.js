@@ -8,8 +8,26 @@ const Homepage = () => {
   // States
   const [recipes, setRecipes] = useState([]);
   const [searchIngredient, setSearchIngredient] = useState("");
+  const [recentSearch, setRecentSearch] = useState([]);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showEmptyMessage, setShowEmptyMessage] = useState(false);
+
+  const handleRecentSearchDeleted = searchSelected => {
+    setRecentSearch(recentSearch.filter(word => word !== searchSelected));
+  };
+
+  const handleRecentSearchSelected = searchSelected => {
+    fetchRecipes(searchSelected).then(result => {
+      setRecipes(result);
+    });
+  };
+
+  const saveRecentSearch = search => {
+    if (recentSearch.length === 5) {
+      recentSearch.shift();
+    }
+    setRecentSearch([...recentSearch, search]);
+  };
 
   const handleChangeIngredient = e => {
     setSearchIngredient(e.target.value);
@@ -23,6 +41,7 @@ const Homepage = () => {
         if (result.length > 0) {
           setRecipes(result);
           setShowEmptyMessage(false);
+          saveRecentSearch(searchIngredient);
         } else {
           setRecipes([]);
           setShowEmptyMessage(true);
@@ -33,7 +52,6 @@ const Homepage = () => {
     }
   };
 
-  // Effects
   useEffect(() => {
     fetchRecipes().then(result => setRecipes(result));
   }, []);
@@ -46,6 +64,9 @@ const Homepage = () => {
         showErrorMessage={showErrorMessage}
         searchIngredient={searchIngredient}
         handleChangeIngredient={handleChangeIngredient}
+        recentSearch={recentSearch}
+        handleRecentSearchSelected={handleRecentSearchSelected}
+        handleRecentSearchDeleted={handleRecentSearchDeleted}
       />
       <Suspense fallback={<Loading />}>
         <CardsList recipes={recipes} showEmptyMessage={showEmptyMessage} />

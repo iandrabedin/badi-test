@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.recent-search {
+  position: relative;
+  background-color: $color-white;
+  padding: 0;
+  margin: -1px 0 0 0;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(33, 37, 41, 0.15);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  z-index: 1;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &:hover {
+      background-color: $color-grey-light;
+    }
+  }
+
+  &__search {
+    width: 100%;
+    padding: 12px;
+  }
+
+  &__delete {
+    width: 32px;
+    padding: 12px;
+    text-align: right;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}

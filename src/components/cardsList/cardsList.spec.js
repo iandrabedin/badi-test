@@ -1,6 +1,6 @@
 import React from "react";
 import { render, cleanup } from "@testing-library/react";
-import { CardsList } from "./cardsList";
+import CardsList from "./cardsList";
 
 afterEach(cleanup);
 

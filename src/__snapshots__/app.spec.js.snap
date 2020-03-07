@@ -12,9 +12,51 @@ exports[`App should render as expected 1`] = `
     </div>
   </div>
   <div
-    class="loading"
+    class="container"
   >
-    Loading...
+    <h1>
+      Recipe Puppy is an ingredient based recipe search
+    </h1>
+    <form
+      class="form"
+    >
+      <div
+        class="form__input-wrapper"
+      >
+        <label
+          class="form__input-label"
+          for="ingredient"
+        >
+          Ingredients
+        </label>
+        <input
+          class="form__input"
+          id="ingredient"
+          name="ingredient"
+          placeholder="Onions, garlic..."
+          type="text"
+          value=""
+        />
+        <div
+          class="form__input--error-message"
+        />
+        <ul
+          class="recent-search  recent-search--hidden"
+        />
+      </div>
+      <button
+        class="button"
+        name="button_submit"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    <div
+      class="loading"
+    >
+      Loading...
+    </div>
   </div>
   <footer
     class="footer"
