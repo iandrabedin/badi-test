@@ -1,0 +1,1 @@
+export { RecentSearch } from "./recentSearch";

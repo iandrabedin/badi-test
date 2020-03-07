@@ -1,17 +1,23 @@
-import React, { Suspense, lazy } from "react";
-import { Navbar, Footer, Loading } from "./components";
+import React from "react";
+import { Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Navbar, Footer } from "./components";
+import Homepage from "./pages";
 import "./app.scss";
 
-const Homepage = lazy(() => import("./pages/homepage"));
+const history = createBrowserHistory();
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Suspense fallback={<Loading />}>
-        <Homepage />
-      </Suspense>
-      <Footer />
+      <Router history={history}>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Homepage}></Route>
+          <Route path="/homepage" component={Homepage}></Route>
+        </Switch>
+        <Footer />
+      </Router>
     </>
   );
 }

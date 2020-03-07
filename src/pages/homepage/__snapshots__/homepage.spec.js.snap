@@ -12,14 +12,16 @@ exports[`Homepage should render as expected 1`] = `
       class="form"
     >
       <div
-        class="form-input"
+        class="form__input-wrapper"
       >
         <label
+          class="form__input-label"
           for="ingredient"
         >
           Ingredients
         </label>
         <input
+          class="form__input"
           id="ingredient"
           name="ingredient"
           placeholder="Onions, garlic..."
@@ -27,20 +29,25 @@ exports[`Homepage should render as expected 1`] = `
           value=""
         />
         <div
-          class="error-message"
+          class="form__input--error-message"
+        />
+        <ul
+          class="recent-search  recent-search--hidden"
         />
       </div>
       <button
         class="button"
-        name="button-submit"
+        name="button_submit"
         type="submit"
       >
         Search
       </button>
     </form>
     <div
-      class="row"
-    />
+      class="loading"
+    >
+      Loading...
+    </div>
   </div>
 </DocumentFragment>
 `;

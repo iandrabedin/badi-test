@@ -7,15 +7,15 @@ export const Card = memo(props => {
   return (
     <div className="col-sm-12 col-md-6">
       <div className="card">
-        <div className="image">
+        <div className="card__image">
           <a href={url} target="_blank" rel="noopener noreferrer">
             <img src={image} alt={title} />
           </a>
-          {lactose && <div className="tag">Has Lactose</div>}
+          {lactose && <div className="card__tag-lactose">Has Lactose</div>}
         </div>
-        <div className="info">
-          <h3 className="title">{title}</h3>
-          <p className="ingredients">{ingredients}</p>
+        <div className="card__info-wrapper">
+          <h3 className="card__title">{title}</h3>
+          <p className="card__description">{ingredients}</p>
         </div>
       </div>
     </div>

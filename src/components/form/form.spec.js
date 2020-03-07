@@ -5,10 +5,13 @@ import { Form } from "./form";
 afterEach(cleanup);
 
 const props = {
-  searchIngredient: "milk",
+  searchIngredient: ["milk"],
   handleChangeIngredient: jest.fn(),
   onSubmit: jest.fn(),
-  showErrorMessage: false
+  showErrorMessage: false,
+  recentSearch: [],
+  handleRecentSearchSelected: jest.fn(),
+  handleRecentSearchDeleted: jest.fn()
 };
 
 describe("Form", () => {
