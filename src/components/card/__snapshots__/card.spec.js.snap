@@ -9,7 +9,7 @@ exports[`Card should render as expected 1`] = `
       class="card"
     >
       <div
-        class="image"
+        class="card__image"
       >
         <a
           href="url"
@@ -23,15 +23,15 @@ exports[`Card should render as expected 1`] = `
         </a>
       </div>
       <div
-        class="info"
+        class="card__info-wrapper"
       >
         <h3
-          class="title"
+          class="card__title"
         >
           title
         </h3>
         <p
-          class="ingredients"
+          class="card__description"
         >
           eggs
         </p>

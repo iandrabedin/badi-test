@@ -12,7 +12,7 @@ exports[`CardsList should render as expect 1`] = `
         class="card"
       >
         <div
-          class="image"
+          class="card__image"
         >
           <a
             href="href"
@@ -25,21 +25,21 @@ exports[`CardsList should render as expect 1`] = `
             />
           </a>
           <div
-            class="tag"
+            class="card__tag-lactose"
           >
             Has Lactose
           </div>
         </div>
         <div
-          class="info"
+          class="card__info-wrapper"
         >
           <h3
-            class="title"
+            class="card__title"
           >
             recipe title
           </h3>
           <p
-            class="ingredients"
+            class="card__description"
           >
             potato, cheese
           </p>
